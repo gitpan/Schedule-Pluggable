@@ -1,0 +1,27 @@
+Build.PL
+Changes
+lib/Schedule/Pluggable/Config.pm
+lib/Schedule/Pluggable/EventHandler.pm
+lib/Schedule/Pluggable/Plugin/DefaultEventHandler.pm
+lib/Schedule/Pluggable/Plugin/JobsFromData.pm
+lib/Schedule/Pluggable/Plugin/JobsFromXML.pm
+lib/Schedule/Pluggable/Plugin/JobsFromXMLTemplate.pm
+lib/Schedule/Pluggable/Plugin/Trace.pm
+lib/Schedule/Pluggable/Run.pm
+lib/Schedule/Pluggable/Status.pm
+lib/Schedule/Pluggable.pm
+Makefile
+Makefile.PL
+MANIFEST
+README
+t/00.load.t
+t/01.series.t
+t/fail.pl
+t/perlcritic.t
+t/pod-coverage.t
+t/pod.t
+t/succeed.pl
+t/test.pl
+t/test.xml
+t/test1.xml
+META.yml                                 Module meta-data (added by MakeMaker)
