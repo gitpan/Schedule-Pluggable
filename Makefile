@@ -26,30 +26,30 @@
 
 # --- MakeMaker const_config section:
 
-# These definitions are from config.sh (via /Users/tony/perl5/perlbrew/perls/perl-5.12.1/lib/5.12.1/darwin-2level/Config.pm).
+# These definitions are from config.sh (via /opt/csw/lib/perl/5.8.8/Config.pm).
 # They may have been overridden via Makefile.PL or on the command line.
 AR = ar
 CC = cc
-CCCDLFLAGS =  
-CCDLFLAGS =  
-DLEXT = bundle
+CCCDLFLAGS = -KPIC
+CCDLFLAGS = -R /opt/csw/lib
+DLEXT = so
 DLSRC = dl_dlopen.xs
 EXE_EXT = 
-FULL_AR = /usr/bin/ar
-LD = env MACOSX_DEPLOYMENT_TARGET=10.3 cc
-LDDLFLAGS =  -bundle -undefined dynamic_lookup -fstack-protector
-LDFLAGS =  -fstack-protector
-LIBC = /usr/lib/libc.dylib
+FULL_AR = /usr/ccs/bin/ar
+LD = cc
+LDDLFLAGS = -G -L/opt/csw/bdb44/lib -L/opt/csw/lib -L/usr/lib -L/usr/ccs/lib -L/opt/SUNWspro/prod/lib -L/lib
+LDFLAGS = -L/opt/csw/bdb44/lib -L/opt/csw/lib -L/usr/lib -L/usr/ccs/lib -L/opt/SUNWspro/prod/lib -L/lib
+LIBC = /lib/libc.so
 LIB_EXT = .a
 OBJ_EXT = .o
-OSNAME = darwin
-OSVERS = 10.6.0
-RANLIB = ranlib
-SITELIBEXP = /Users/tony/perl5/perlbrew/perls/perl-5.12.1/lib/site_perl/5.12.1
-SITEARCHEXP = /Users/tony/perl5/perlbrew/perls/perl-5.12.1/lib/site_perl/5.12.1/darwin-2level
-SO = dylib
-VENDORARCHEXP = 
-VENDORLIBEXP = 
+OSNAME = solaris
+OSVERS = 2.8
+RANLIB = :
+SITELIBEXP = /opt/csw/share/perl/site_perl
+SITEARCHEXP = /opt/csw/lib/perl/site_perl
+SO = so
+VENDORARCHEXP = /opt/csw/lib/perl/csw
+VENDORLIBEXP = /opt/csw/share/perl/csw
 
 
 # --- MakeMaker constants section:
@@ -58,11 +58,11 @@ DIRFILESEP = /
 DFSEP = $(DIRFILESEP)
 NAME = Schedule::Pluggable
 NAME_SYM = Schedule_Pluggable
-VERSION = 0.0.1
+VERSION = 0.0.2
 VERSION_MACRO = VERSION
-VERSION_SYM = 0_0_1
+VERSION_SYM = 0_0_2
 DEFINE_VERSION = -D$(VERSION_MACRO)=\"$(VERSION)\"
-XS_VERSION = 0.0.1
+XS_VERSION = 0.0.2
 XS_VERSION_MACRO = XS_VERSION
 XS_DEFINE_VERSION = -D$(XS_VERSION_MACRO)=\"$(XS_VERSION)\"
 INST_ARCHLIB = blib/arch
@@ -72,59 +72,59 @@ INST_LIB = blib/lib
 INST_MAN1DIR = blib/man1
 INST_MAN3DIR = blib/man3
 MAN1EXT = 1
-MAN3EXT = 3
+MAN3EXT = 3perl
 INSTALLDIRS = site
 DESTDIR = 
 PREFIX = $(SITEPREFIX)
-PERLPREFIX = /Users/tony/perl5/perlbrew/perls/perl-5.12.1
-SITEPREFIX = /Users/tony/perl5/perlbrew/perls/perl-5.12.1
-VENDORPREFIX = 
-INSTALLPRIVLIB = /Users/tony/perl5/perlbrew/perls/perl-5.12.1/lib/5.12.1
+PERLPREFIX = /opt/csw
+SITEPREFIX = /usr
+VENDORPREFIX = /opt/csw
+INSTALLPRIVLIB = /opt/csw/share/perl/5.8.8
 DESTINSTALLPRIVLIB = $(DESTDIR)$(INSTALLPRIVLIB)
-INSTALLSITELIB = /Users/tony/perl5/perlbrew/perls/perl-5.12.1/lib/site_perl/5.12.1
+INSTALLSITELIB = /opt/csw/share/perl/site_perl
 DESTINSTALLSITELIB = $(DESTDIR)$(INSTALLSITELIB)
-INSTALLVENDORLIB = 
+INSTALLVENDORLIB = /opt/csw/share/perl/csw
 DESTINSTALLVENDORLIB = $(DESTDIR)$(INSTALLVENDORLIB)
-INSTALLARCHLIB = /Users/tony/perl5/perlbrew/perls/perl-5.12.1/lib/5.12.1/darwin-2level
+INSTALLARCHLIB = /opt/csw/lib/perl/5.8.8
 DESTINSTALLARCHLIB = $(DESTDIR)$(INSTALLARCHLIB)
-INSTALLSITEARCH = /Users/tony/perl5/perlbrew/perls/perl-5.12.1/lib/site_perl/5.12.1/darwin-2level
+INSTALLSITEARCH = /opt/csw/lib/perl/site_perl
 DESTINSTALLSITEARCH = $(DESTDIR)$(INSTALLSITEARCH)
-INSTALLVENDORARCH = 
+INSTALLVENDORARCH = /opt/csw/lib/perl/csw
 DESTINSTALLVENDORARCH = $(DESTDIR)$(INSTALLVENDORARCH)
-INSTALLBIN = /Users/tony/perl5/perlbrew/perls/perl-5.12.1/bin
+INSTALLBIN = /opt/csw/bin
 DESTINSTALLBIN = $(DESTDIR)$(INSTALLBIN)
-INSTALLSITEBIN = /Users/tony/perl5/perlbrew/perls/perl-5.12.1/bin
+INSTALLSITEBIN = /usr/bin
 DESTINSTALLSITEBIN = $(DESTDIR)$(INSTALLSITEBIN)
-INSTALLVENDORBIN = 
+INSTALLVENDORBIN = /opt/csw/bin
 DESTINSTALLVENDORBIN = $(DESTDIR)$(INSTALLVENDORBIN)
-INSTALLSCRIPT = /Users/tony/perl5/perlbrew/perls/perl-5.12.1/bin
+INSTALLSCRIPT = /opt/csw/bin
 DESTINSTALLSCRIPT = $(DESTDIR)$(INSTALLSCRIPT)
-INSTALLSITESCRIPT = /Users/tony/perl5/perlbrew/perls/perl-5.12.1/bin
+INSTALLSITESCRIPT = /usr/bin
 DESTINSTALLSITESCRIPT = $(DESTDIR)$(INSTALLSITESCRIPT)
-INSTALLVENDORSCRIPT = 
+INSTALLVENDORSCRIPT = /opt/csw/bin
 DESTINSTALLVENDORSCRIPT = $(DESTDIR)$(INSTALLVENDORSCRIPT)
-INSTALLMAN1DIR = /Users/tony/perl5/perlbrew/perls/perl-5.12.1/man/man1
+INSTALLMAN1DIR = /opt/csw/share/man/man1
 DESTINSTALLMAN1DIR = $(DESTDIR)$(INSTALLMAN1DIR)
-INSTALLSITEMAN1DIR = /Users/tony/perl5/perlbrew/perls/perl-5.12.1/man/man1
+INSTALLSITEMAN1DIR = /opt/csw/share/man/man1
 DESTINSTALLSITEMAN1DIR = $(DESTDIR)$(INSTALLSITEMAN1DIR)
-INSTALLVENDORMAN1DIR = 
+INSTALLVENDORMAN1DIR = /opt/csw/share/man/man1
 DESTINSTALLVENDORMAN1DIR = $(DESTDIR)$(INSTALLVENDORMAN1DIR)
-INSTALLMAN3DIR = /Users/tony/perl5/perlbrew/perls/perl-5.12.1/man/man3
+INSTALLMAN3DIR = /opt/csw/share/man/man3
 DESTINSTALLMAN3DIR = $(DESTDIR)$(INSTALLMAN3DIR)
-INSTALLSITEMAN3DIR = /Users/tony/perl5/perlbrew/perls/perl-5.12.1/man/man3
+INSTALLSITEMAN3DIR = /opt/csw/share/man/man3
 DESTINSTALLSITEMAN3DIR = $(DESTDIR)$(INSTALLSITEMAN3DIR)
-INSTALLVENDORMAN3DIR = 
+INSTALLVENDORMAN3DIR = /opt/csw/share/man/man3
 DESTINSTALLVENDORMAN3DIR = $(DESTDIR)$(INSTALLVENDORMAN3DIR)
-PERL_LIB = /Users/tony/perl5/perlbrew/perls/perl-5.12.1/lib/5.12.1
-PERL_ARCHLIB = /Users/tony/perl5/perlbrew/perls/perl-5.12.1/lib/5.12.1/darwin-2level
+PERL_LIB = /opt/csw/share/perl/5.8.8
+PERL_ARCHLIB = /opt/csw/lib/perl/5.8.8
 LIBPERL_A = libperl.a
 FIRST_MAKEFILE = Makefile
 MAKEFILE_OLD = Makefile.old
 MAKE_APERL_FILE = Makefile.aperl
 PERLMAINCC = $(CC)
-PERL_INC = /Users/tony/perl5/perlbrew/perls/perl-5.12.1/lib/5.12.1/darwin-2level/CORE
-PERL = /Users/tony/perl5/perlbrew/bin/perl
-FULLPERL = /Users/tony/perl5/perlbrew/bin/perl
+PERL_INC = /opt/csw/lib/perl/5.8.8/CORE
+PERL = /opt/csw/bin/perl
+FULLPERL = /opt/csw/bin/perl
 ABSPERL = $(PERL)
 PERLRUN = $(PERL)
 FULLPERLRUN = $(FULLPERL)
@@ -137,7 +137,7 @@ PERM_DIR = 755
 PERM_RW = 644
 PERM_RWX = 755
 
-MAKEMAKER   = /Users/tony/perl5/perlbrew/perls/perl-5.12.1/lib/5.12.1/ExtUtils/MakeMaker.pm
+MAKEMAKER   = /opt/csw/share/perl/5.8.8/ExtUtils/MakeMaker.pm
 MM_VERSION  = 6.56
 MM_REVISION = 65600
 
@@ -162,8 +162,7 @@ C_FILES  =
 O_FILES  = 
 H_FILES  = 
 MAN1PODS = 
-MAN3PODS = Pluggable.pod \
-	lib/Schedule/Pluggable.pm \
+MAN3PODS = lib/Schedule/Pluggable.pm \
 	lib/Schedule/Pluggable/Config.pm \
 	lib/Schedule/Pluggable/EventHandler.pm \
 	lib/Schedule/Pluggable/Plugin/DefaultEventHandler.pm \
@@ -194,8 +193,7 @@ PERL_ARCHIVE       =
 PERL_ARCHIVE_AFTER = 
 
 
-TO_INST_PM = Pluggable.pod \
-	lib/Schedule/Pluggable.pm \
+TO_INST_PM = lib/Schedule/Pluggable.pm \
 	lib/Schedule/Pluggable/Config.pm \
 	lib/Schedule/Pluggable/EventHandler.pm \
 	lib/Schedule/Pluggable/Plugin/DefaultEventHandler.pm \
@@ -224,8 +222,6 @@ PM_TO_BLIB = lib/Schedule/Pluggable.pm \
 	blib/lib/Schedule/Pluggable/EventHandler.pm \
 	lib/Schedule/Pluggable/Status.pm \
 	blib/lib/Schedule/Pluggable/Status.pm \
-	Pluggable.pod \
-	$(INST_LIB)/Schedule/Pluggable.pod \
 	lib/Schedule/Pluggable/Config.pm \
 	blib/lib/Schedule/Pluggable/Config.pm
 
@@ -281,7 +277,7 @@ makemakerdflt : all
 
 
 # --- MakeMaker dist section:
-TAR = COPY_EXTENDED_ATTRIBUTES_DISABLE=1 COPYFILE_DISABLE=1 tar
+TAR = tar
 TARFLAGS = cvf
 ZIP = zip
 ZIPFLAGS = -r
@@ -296,7 +292,7 @@ RCS_LABEL = rcs -Nv$(VERSION_SYM): -q
 DIST_CP = best
 DIST_DEFAULT = tardist
 DISTNAME = Schedule-Pluggable
-DISTVNAME = Schedule-Pluggable-0.0.1
+DISTVNAME = Schedule-Pluggable-0.0.2
 
 
 # --- MakeMaker macro section:
@@ -458,7 +454,6 @@ manifypods : pure_all  \
 	lib/Schedule/Pluggable/Plugin/Trace.pm \
 	lib/Schedule/Pluggable/EventHandler.pm \
 	lib/Schedule/Pluggable/Status.pm \
-	Pluggable.pod \
 	lib/Schedule/Pluggable/Config.pm
 	$(NOECHO) $(POD2MAN) --section=3 --perm_rw=$(PERM_RW) \
 	  lib/Schedule/Pluggable.pm $(INST_MAN3DIR)/Schedule::Pluggable.$(MAN3EXT) \
@@ -470,7 +465,6 @@ manifypods : pure_all  \
 	  lib/Schedule/Pluggable/Plugin/Trace.pm $(INST_MAN3DIR)/Schedule::Pluggable::Plugin::Trace.$(MAN3EXT) \
 	  lib/Schedule/Pluggable/EventHandler.pm $(INST_MAN3DIR)/Schedule::Pluggable::EventHandler.$(MAN3EXT) \
 	  lib/Schedule/Pluggable/Status.pm $(INST_MAN3DIR)/Schedule::Pluggable::Status.$(MAN3EXT) \
-	  Pluggable.pod $(INST_MAN3DIR)/Schedule::Pluggable.$(MAN3EXT) \
 	  lib/Schedule/Pluggable/Config.pm $(INST_MAN3DIR)/Schedule::Pluggable::Config.$(MAN3EXT) 
 
 
@@ -537,7 +531,7 @@ metafile : create_distdir
 	$(NOECHO) $(ECHO) Generating META.yml
 	$(NOECHO) $(ECHO) '--- #YAML:1.0' > META_new.yml
 	$(NOECHO) $(ECHO) 'name:               Schedule-Pluggable' >> META_new.yml
-	$(NOECHO) $(ECHO) 'version:            0.0.1' >> META_new.yml
+	$(NOECHO) $(ECHO) 'version:            0.0.2' >> META_new.yml
 	$(NOECHO) $(ECHO) 'abstract:           Flexible Perl Process Scheduler' >> META_new.yml
 	$(NOECHO) $(ECHO) 'author:' >> META_new.yml
 	$(NOECHO) $(ECHO) '    - Tony Edwardson <tony@edwardson.co.uk>' >> META_new.yml
@@ -807,7 +801,7 @@ $(FIRST_MAKEFILE) : Makefile.PL $(CONFIGDEP)
 
 # --- MakeMaker makeaperl section ---
 MAP_TARGET    = perl
-FULLPERL      = /Users/tony/perl5/perlbrew/bin/perl
+FULLPERL      = /opt/csw/bin/perl
 
 $(MAP_TARGET) :: static $(MAKE_APERL_FILE)
 	$(MAKE) $(USEMAKEFILE) $(MAKE_APERL_FILE) $@
@@ -851,7 +845,7 @@ testdb_static :: testdb_dynamic
 # --- MakeMaker ppd section:
 # Creates a PPD (Perl Package Description) for a binary distribution.
 ppd :
-	$(NOECHO) $(ECHO) '<SOFTPKG NAME="$(DISTNAME)" VERSION="0.0.1">' > $(DISTNAME).ppd
+	$(NOECHO) $(ECHO) '<SOFTPKG NAME="$(DISTNAME)" VERSION="0.0.2">' > $(DISTNAME).ppd
 	$(NOECHO) $(ECHO) '    <ABSTRACT>Flexible Perl Process Scheduler</ABSTRACT>' >> $(DISTNAME).ppd
 	$(NOECHO) $(ECHO) '    <AUTHOR>Tony Edwardson &lt;tony@edwardson.co.uk&gt;</AUTHOR>' >> $(DISTNAME).ppd
 	$(NOECHO) $(ECHO) '    <IMPLEMENTATION>' >> $(DISTNAME).ppd
@@ -860,7 +854,7 @@ ppd :
 	$(NOECHO) $(ECHO) '        <REQUIRE NAME="MooseX::Workers" />' >> $(DISTNAME).ppd
 	$(NOECHO) $(ECHO) '        <REQUIRE NAME="Test::More" />' >> $(DISTNAME).ppd
 	$(NOECHO) $(ECHO) '        <REQUIRE NAME="version::" />' >> $(DISTNAME).ppd
-	$(NOECHO) $(ECHO) '        <ARCHITECTURE NAME="darwin-2level-5.12" />' >> $(DISTNAME).ppd
+	$(NOECHO) $(ECHO) '        <ARCHITECTURE NAME="i86pc-solaris-thread-multi-5.8" />' >> $(DISTNAME).ppd
 	$(NOECHO) $(ECHO) '        <CODEBASE HREF="" />' >> $(DISTNAME).ppd
 	$(NOECHO) $(ECHO) '    </IMPLEMENTATION>' >> $(DISTNAME).ppd
 	$(NOECHO) $(ECHO) '</SOFTPKG>' >> $(DISTNAME).ppd
@@ -879,7 +873,6 @@ pm_to_blib : $(FIRST_MAKEFILE) $(TO_INST_PM)
 	  lib/Schedule/Pluggable/Plugin/Trace.pm blib/lib/Schedule/Pluggable/Plugin/Trace.pm \
 	  lib/Schedule/Pluggable/EventHandler.pm blib/lib/Schedule/Pluggable/EventHandler.pm \
 	  lib/Schedule/Pluggable/Status.pm blib/lib/Schedule/Pluggable/Status.pm \
-	  Pluggable.pod $(INST_LIB)/Schedule/Pluggable.pod \
 	  lib/Schedule/Pluggable/Config.pm blib/lib/Schedule/Pluggable/Config.pm 
 	$(NOECHO) $(TOUCH) pm_to_blib
 
