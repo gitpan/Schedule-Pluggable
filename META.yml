@@ -1,6 +1,6 @@
 --- #YAML:1.0
 name:               Schedule-Pluggable
-version:            0.0.2
+version:            0.0.3
 abstract:           Flexible Perl Process Scheduler
 author:
     - Tony Edwardson <tony@edwardson.co.uk>
