@@ -16,11 +16,11 @@ README
 t/00.load.t
 t/01.series.t
 t/fail.pl
-t/pod-coverage.t
 t/pod.t
 t/succeed.pl
 t/test.pl
 t/test.xml
 t/test1.xml
+t/pod-coverage.t
 xt/perlcritic.t
 META.yml                                 Module meta-data (added by MakeMaker)
