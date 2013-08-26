@@ -1,7 +1,6 @@
 use strict;
 use warnings;
 use ExtUtils::MakeMaker;
-use 5.008001;
 
 WriteMakefile(
     NAME                => 'Schedule::Pluggable',

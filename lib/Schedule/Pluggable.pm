@@ -4,7 +4,7 @@ use Moose;
 use Carp qw/ croak /;
 use Try::Tiny;
 
-our $VERSION = '0.0.4';
+our $VERSION = '0.0.5';
 with 'MooseX::Workers';
 with 'MooseX::Object::Pluggable';
 
