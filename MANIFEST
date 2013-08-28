@@ -2,7 +2,6 @@ Changes
 lib/Schedule/Pluggable.pm
 lib/Schedule/Pluggable/Config.pm
 lib/Schedule/Pluggable/EventHandler.pm
-lib/Schedule/Pluggable/Plugin/.Trace.pm.swp
 lib/Schedule/Pluggable/Plugin/DefaultEventHandler.pm
 lib/Schedule/Pluggable/Plugin/JobsFromData.pm
 lib/Schedule/Pluggable/Plugin/JobsFromXML.pm

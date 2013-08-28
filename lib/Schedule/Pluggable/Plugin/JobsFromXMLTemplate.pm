@@ -10,7 +10,10 @@ sub get_job_config {
     my $jobs = undef;
     if ($params->{Jobs}) {
         if (-f $params->{Jobs}) {
-            $jobs = XMLin($params->{Jobs}, KeyAttr=>{ name => 'name1'});
+            my $tt = new Template({EVAL_PERL => 1});
+            my $processed;
+            $tt->process($params->{Jobs}, $self, \$processed);
+            $jobs = XMLin($processed, KeyAttr=>{ name => 'name1'});
         }
         else {
             croak("Xml input file $params->{Jobs} does not exist");
@@ -33,6 +36,11 @@ Schedule::Pluggable::Plugin::JobsFromXMLTemplate - Plugin Role for Schedule::Plu
 =over
 
 =item get_job_config
+
+get_job_config is the only method in this plugin and is returns the job config from and XML file
+It expects a mandatory hashref which has a key Jobs containing the name of a file which contains the xml job configuration.
+As the name suggests, the file is also processed by Template::Toolkit
+
 
 =back
 

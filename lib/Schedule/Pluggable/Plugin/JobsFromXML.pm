@@ -18,7 +18,7 @@ sub get_job_config {
         }
     }
     else  {
-        croak("Mandator Paramneter Jobs with name of  XMLFile missing for JobsFromXML");
+        croak("Mandator Parameter Jobs with name of  XMLFile missing for JobsFromXML");
     }
     return $jobs->{Job};
 }
@@ -34,6 +34,9 @@ Schedule::Pluggable::Plugin::JobsFromXML - Plugin Role for Schedule::Pluggable t
 =over
 
 =item get_job_config
+
+get_job_config is the only method in this plugin and is returns the job config from and XML file
+It expects a mandatory hashref which has a key Jobs containing the name of a file which contains the xml jon configuration
 
 =back
 
