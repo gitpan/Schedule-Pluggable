@@ -1,7 +1,6 @@
 package Schedule::Pluggable::Plugin::JobsFromXML;
 use Moose::Role;
 use Data::Dumper;
-use XML::Simple;
 use Carp qw/ croak /;
 
 
@@ -9,6 +8,10 @@ sub get_job_config {
     my $self = shift;
     my $params = shift;
     my $jobs = undef;
+    eval {
+        use XML::Simple;
+    };
+    die $@ if $@;
     if ($params->{Jobs}) {
         if (-f $params->{Jobs}) {
             $jobs = XMLin($params->{Jobs}, KeyAttr=>{ name => 'name1'});

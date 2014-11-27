@@ -327,8 +327,7 @@ Jobs are specified as reference to an array which can contain either a list of c
 =back
 
 
-
-=head1 AUTHOR - 
+=head1 AUTHOR
 
 Tony Edwardson <Tony@Edwardson.co.uk>
 
@@ -349,5 +348,11 @@ None yet - let me know if you find any
 =item Handle Job Timeouts
 
 =back
+
+=head1 COPYRIGHT AND LICENSE
+
+This software is copyright (c) 2014 by Tony Edwardson.
+
+This is free software; you can redistribute it and/or modify it under the same terms as the Perl 5 programming language system itself.
 
 =cut

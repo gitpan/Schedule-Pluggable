@@ -8,9 +8,17 @@ sub get_job_config {
     my $self = shift;
     my $params = shift;
     my $jobs = undef;
+    eval {
+        use XML::Simple;
+        use Template;
+    };
     if ($params->{Jobs}) {
         if (-f $params->{Jobs}) {
-            $jobs = XMLin($params->{Jobs}, KeyAttr=>{ name => 'name1'});
+            my $tt = Template->new();
+            my $processed;
+            $tt->process($params->{Jobs}, $params, \$processed)
+                or die $tt->error;
+            $jobs = XMLin($processed, KeyAttr=>{ name => 'name1'});
         }
         else {
             croak("Xml input file $params->{Jobs} does not exist");
@@ -19,6 +27,7 @@ sub get_job_config {
     else  {
         croak("Mandator Parameter Xml input file Jobs missing for JobsFromXML");
     }
+
     return $jobs->{Job};
 }
 1;
